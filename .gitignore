@@ -110,8 +110,4 @@ dkms.conf
 *.out
 *.app
 
-.idea/Data-Structures.iml
-.idea/encodings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
+.idea/
