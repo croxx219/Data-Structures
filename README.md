@@ -1,5 +1,5 @@
 ![MADE WITH](https://img.shields.io/static/v1.svg?labelColor=important&color=critical&label=MADE%20WITH&message=C%2B%2B&logo=C%2B%2B&logoColor=black&style=for-the-badge&cacheSeconds=33600)  
-![Travis (.com) branch](https://img.shields.io/travis/com/croxx219/Data-Structures/c++-impl.svg?logo=travis&style=popout&cacheSeconds=33600)
+![Travis (.com) branch](https://img.shields.io/travis/com/croxx219/Data-Structures/c++-impl.svg?style=popout&logo=travis&cacheSeconds=33600)
 ![Codecov branch](https://img.shields.io/codecov/c/github/croxx219/data-structures/c++-impl.svg?style=popout&logo=codecov&cacheSeconds=33600)  
 ![GitHub issues](https://img.shields.io/github/issues/croxx219/data-structures.svg?style=popout&cacheSeconds=33600)
 ![Maven Central](https://img.shields.io/maven-central/v/io.aurium/data-structures.svg?label=maven&style=popout&cacheSeconds=33600)
