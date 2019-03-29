@@ -1,8 +1,12 @@
 package structures;
 
 import common.Node;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LinkedList<T> {
+    private static final Logger LOGGER = LogManager.getLogger(LinkedList.class.getName());
+    
     Node<T> head;
     int size;
 
@@ -29,12 +33,12 @@ public class LinkedList<T> {
         Node<T> prevNode = null;
 
         if (!contains(dataToRemove)) {
-            System.out.println(dataToRemove + " not found");
+            LOGGER.warn(dataToRemove + " not found");
         }
 
         if (currNode != null && currNode.data == dataToRemove) {
             this.head = currNode.next;
-            System.out.println(dataToRemove + " found and deleted");
+            LOGGER.info(dataToRemove + " found and deleted");
             size++;
         }
 
@@ -45,7 +49,7 @@ public class LinkedList<T> {
 
         if (currNode != null) {
             prevNode.next = currNode.next;
-            System.out.println(dataToRemove + " found and deleted");
+            LOGGER.info(dataToRemove + " found and deleted");
             size++;
         }
     }
@@ -55,11 +59,11 @@ public class LinkedList<T> {
         Node<T> prev = null;
 
         if (index > size - 1) {
-            System.out.println("Position: " + index + " is not valid");
+            LOGGER.error("Position: " + index + " is not valid");
         }
 
         if (index == 0 && currNode != null) {
-            System.out.println("Element: " + this.head + " at position : " + index + " has been deleted");
+            LOGGER.info("Element: " + this.head + " at position : " + index + " has been deleted");
             this.head = currNode.next;
             size--;
         }
@@ -68,7 +72,7 @@ public class LinkedList<T> {
 
         while (currNode != null) {
             if (counter == index) {
-                System.out.println("Element: " + currNode + " at position : " + index + " has been deleted");
+                LOGGER.info("Element: " + currNode + " at position : " + index + " has been deleted");
                 prev.next = currNode.next;
                 size--;
                 break;
