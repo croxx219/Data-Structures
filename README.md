@@ -4,6 +4,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/croxx219/data-structures.svg?style=popout&cacheSeconds=33600)
 ![Maven Central](https://img.shields.io/maven-central/v/io.aurium/data-structures.svg?label=maven&style=popout&cacheSeconds=33600)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT&cacheSeconds=33600)
+
 # Data-Structures
 Collection of data structures(trees, graphs, etc...)
 Not everything has been reviewed by me

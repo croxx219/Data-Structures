@@ -5,6 +5,6 @@ public class ApplicationRunner {
     private static final Logger LOGGER = LogManager.getLogger(ApplicationRunner.class.getName());
 
     public static void main(String[] args) {
-        LOGGER.info("--------------- STARTING PROGRAM ---------------");
+	    LOGGER.info("--------------- STARTING PROGRAM ---------------");
     }
 }
