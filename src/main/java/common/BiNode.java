@@ -2,38 +2,43 @@ package common;
 
 import java.util.Objects;
 
-public class BiNode<T> extends Node<T> {
-	public Node<T> prev;
+public class BiNode<T> {
+	public T data;
+	public BiNode<T> prev;
+	public BiNode<T> next;
 
 	public BiNode(T data) {
-		super(data);
 		this.prev = null;
+		this.next = null;
+		this.data = data;
 	}
 
 	public BiNode() {
-		super(null);
 		this.prev = null;
+		this.next = null;
+		this.data = null;
 	}
 
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (!(o instanceof BiNode)) return false;
-		if (!super.equals(o)) return false;
 		BiNode<?> biNode = (BiNode<?>) o;
-		return Objects.equals(prev, biNode.prev);
+		return Objects.equals(data, biNode.data) &&
+			Objects.equals(prev, biNode.prev) &&
+			Objects.equals(next, biNode.next);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(super.hashCode(), prev);
+		return Objects.hash(data, prev, next);
 	}
 
 	@Override
 	public String toString() {
 		return "BiNode{" +
-			"prev=" + prev +
-			", data=" + data +
+			"data=" + data +
+			", prev=" + prev +
 			", next=" + next +
 			'}';
 	}

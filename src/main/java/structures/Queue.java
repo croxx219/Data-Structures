@@ -1,7 +1,6 @@
 package structures;
 
 import common.BiNode;
-import common.Node;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -40,13 +39,10 @@ public class Queue<T> {
 	public T dequeue() {
 		if (isEmpty(this))
 			throw new NoSuchElementException("Queue is empty");
-
 		T item = front.data;
-		BiNode<T> newFront = new BiNode<>(front.prev.data);
-		newFront.next = front;
-		front.prev = newFront;
-		front = newFront;
-		this.size = this.size - 1;
+		front = front.prev;
+		front.next = null;
+		this.size--;
 		return item;
 	}
 
@@ -59,7 +55,7 @@ public class Queue<T> {
 
 	@Override
 	public String toString() {
-		Node<T> currNode = this.rear;
+		BiNode<T> currNode = this.rear;
 		StringBuilder builder = new StringBuilder();
 		builder.append("Queue: ");
 

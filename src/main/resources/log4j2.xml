@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
     <Appenders>
-        <Console name="console" target="SYSTEM_OUT">
+        <Console name="console" target="SYSTEM_OUT" follow="true">
             <PatternLayout
-                    pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
+                    pattern="%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} %highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=cyan, DEBUG=yellow, TRACE=green} %style{[%15.15t]}{magenta} %style{%-20C{1.}}{blue} : %m%n"/>
         </Console>
     </Appenders>
     <Loggers>
