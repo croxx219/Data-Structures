@@ -1,4 +1,4 @@
-package common;
+package io.aurium.data.structures.common;
 
 import java.util.Objects;
 

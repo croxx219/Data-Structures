@@ -1,6 +1,6 @@
-package structures;
+package io.aurium.data.structures.structures;
 
-import common.Node;
+import io.aurium.data.structures.common.Node;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
