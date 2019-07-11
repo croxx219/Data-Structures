@@ -1,6 +1,10 @@
 language: java
 sudo: false
-
-script: "mvn cobertura:cobertura"
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+addons:
+  sonarcloud:
+    organization: "croxx219"
+    token:
+      secure: "VjTS09wqa0OE9K+d06lG4A5WhcE0RZ7+a5fNtbwaPZ57XC3lD8kFaVYpdUH93IMC3T6WDmpmd2QPSaQEsBAvs/3pVoyLe0Ogqw4l+h6tEvkjxOqAs+gXkZ8O1Ku7ni3pIkBNLcN6dGxdgAjztjKBRKKmHjLnKX/1YlWTCFBKChSwqFKgu+SNxMGFBCU5srWlIXJxYbuw8DCAIrv2amcRRRLT8a5AL/BxjET5P/P+bUYNdbyq83e2243X8Q+ZPcsVaZoEJakyd753Rc7i8HCSXYLCVJkFssYgYs6MyrJBXwUQWSvc9CqNxEDHLj3RMQlVfwkSPyNVKZtvcpNy97+VZqXo7UhgwYRjAD7hovUiq7eLs6v6LUqYjZcSSdYKAPAjwWwhliKFg8eVytSBemsKKm4hLug/sMZwiW41ki0aELb/eiu8+q2ovx8Tbp8p2K8zpLQsv0kmuVnzvMQBovRY99YTxkxPcElxkl8nbACGzPoypo/TFhzKQ8jlz2WoEJLYh4lsMhEAzXHdyzu5bf07MOTXkYLvSVpYOL5/VHxxH+rOKTXWcryKxwjTUvHLsMAHYU1Ox7zePoGbGcCbGd6EMOa6VvIK+PubIKYK9s2xTNtslxOzZ8ME+EF8JAFS4QE2yR0rZbsqnwDV3Qv5h1zpTVWw7vbJm2WJc0F8XiLcRbQ=" # encrypted value of your token
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=croxx219_Data-Structures
